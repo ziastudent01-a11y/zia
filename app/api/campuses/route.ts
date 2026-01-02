@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { Campus } from "@prisma/client";
+
+// Infer type to avoid "no exported member" build error
+type Campus = NonNullable<Awaited<ReturnType<typeof prisma.campus.findFirst>>>;
 
 export async function POST(req: Request) {
   const body = await req.json();
