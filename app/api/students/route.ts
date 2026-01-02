@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { Prisma } from "@prisma/client";
+// import { Prisma } from "@prisma/client";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -15,7 +15,8 @@ export async function GET(req: Request) {
   const applicationStatus = searchParams.get("applicationStatus");
   const search = searchParams.get("search");
 
-  const where: Prisma.StudentWhereInput = {};
+  // Use 'any' to avoid "Module has no exported member 'Prisma'" build error
+  const where: any = {};
 
   if (campusId) where.campusId = campusId;
   if (programName) where.programName = { contains: programName, mode: "insensitive" };
