@@ -19,7 +19,7 @@ export async function GET() {
     }),
 
     // 3. By Application Status
-     prisma.student.groupBy({
+    prisma.student.groupBy({
       by: ["applicationStatus"],
       _count: { _all: true },
     }),
@@ -38,21 +38,21 @@ export async function GET() {
 
   // Enrich campus data with names
   const campuses = await prisma.campus.findMany({
-    where: { id: { in: studentsByCampus.map((s) => s.campusId) } },
+    where: { id: { in: studentsByCampus.map((s: any) => s.campusId) } },
     select: { id: true, name: true },
   });
 
-  const campusStats = studentsByCampus.map((item) => ({
+  const campusStats = studentsByCampus.map((item: any) => ({
     name: campuses.find((c) => c.id === item.campusId)?.name || "Unknown",
     value: item._count._all,
   }));
 
-  const statusStats = studentsByStatus.map((item) => ({
+  const statusStats = studentsByStatus.map((item: any) => ({
     name: item.applicationStatus.replace("_", " "),
     value: item._count._all,
   }));
 
-   const programStats = studentsByProgram.map((item) => ({
+  const programStats = studentsByProgram.map((item: any) => ({
     name: item.programName,
     value: item._count._all,
   }));
