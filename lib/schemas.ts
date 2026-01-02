@@ -43,7 +43,7 @@ export const studentSchema = z.object({
         "RETURNED",
     ]),
     courseStatus: z.enum(["ENROLLED", "COMPLETED", "DROPPED"]),
-    isEligible: z.boolean().default(true),
+    isEligible: z.boolean().optional(),
 });
 
 export type StudentFormData = z.infer<typeof studentSchema>;

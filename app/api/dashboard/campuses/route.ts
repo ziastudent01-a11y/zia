@@ -6,11 +6,11 @@ export async function GET() {
     where: { isActive: true },
     include: {
       students: {
-        where: { isActive: true },
+        // Assuming we want all students for stats, or filter by ENROLLED if 'isActive' implies it.
+        // For now, let's fetch all relevant fields to filter in memory as before
         select: {
-          academicStatus: true,
-          fundingStatus: true,
-          documentsStatus: true,
+          applicationStatus: true,
+          courseStatus: true,
         },
       },
     },
@@ -28,26 +28,25 @@ export async function GET() {
 
       totalStudents: students.length,
 
+      // Mapping 'fundingStatus' logic to 'applicationStatus'
       approvedFilings: students.filter(
-        (s) => s.fundingStatus === "APPROVED"
+        (s) => s.applicationStatus === "FILE_SUBMITTED"
       ).length,
 
       pendingFilings: students.filter(
-        (s) => s.fundingStatus === "FILED"
+        (s) => s.applicationStatus === "FILE_COMPLETE" || s.applicationStatus === "NOT_FILED"
       ).length,
 
       rejectedFilings: students.filter(
-        (s) => s.fundingStatus === "REJECTED"
+        (s) => s.applicationStatus === "RETURNED"
       ).length,
 
       documentsMissing: students.filter(
-        (s) =>
-          s.documentsStatus === "INCOMPLETE" ||
-          s.documentsStatus === "IN_PROGRESS"
+        (s) => s.applicationStatus === "FILE_INCOMPLETE"
       ).length,
 
       dropouts: students.filter(
-        (s) => s.academicStatus === "DROPPED_OUT"
+        (s) => s.courseStatus === "DROPPED"
       ).length,
     };
   });

@@ -22,7 +22,3 @@ export const StudentImportSchema = z.object({
   funding_status: z.enum(["NOT_FILED", "FILED", "APPROVED", "REJECTED"]),
   documents_status: z.enum(["COMPLETE", "IN_PROGRESS", "INCOMPLETE"]),
 });
-isEligible =
-  Boolean(social_security_number) &&
-  Boolean(factory_name) &&
-  funding_status !== "REJECTED";

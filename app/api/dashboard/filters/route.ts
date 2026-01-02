@@ -10,10 +10,10 @@ export async function GET(req: Request) {
   const programName = searchParams.get("programName");
 
   const whereClause: any = {
-    isActive: true,
+    // isActive: true, // Not needed or maps to courseStatus
     ...(campusIds.length && { campusId: { in: campusIds } }),
-    ...(academicStatus && { academicStatus }),
-    ...(fundingStatus && { fundingStatus }),
+    ...(academicStatus && { courseStatus: academicStatus }), // Mapping to courseStatus
+    ...(fundingStatus && { applicationStatus: fundingStatus }), // Mapping to applicationStatus
     ...(programName && { programName }),
   };
 
@@ -23,9 +23,9 @@ export async function GET(req: Request) {
       id: true,
       fileNumber: true,
       programName: true,
-      academicStatus: true,
-      fundingStatus: true,
-      documentsStatus: true,
+      courseStatus: true,      // Was academicStatus
+      applicationStatus: true, // Was fundingStatus
+      // documentsStatus: true, // Removed as no direct mapping exists
       campusId: true,
     },
     take: 1000, // safe cap for charts

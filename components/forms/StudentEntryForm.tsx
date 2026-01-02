@@ -63,6 +63,7 @@ export default function StudentEntryForm({ initialData }: Props) {
             // Redirect to dashboard on success
             router.push("/dashboard");
             router.refresh();
+        } catch (err) {
             setError(err instanceof Error ? err.message : "An unexpected error occurred");
         } finally {
             setIsSubmitting(false);

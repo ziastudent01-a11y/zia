@@ -10,7 +10,7 @@ model Campus {
   id        String   @id @default(uuid())
   code      String   @unique
   name      String
-  city      String
+  city      String   @default("Unknown")
   latitude  Float
   longitude Float
   address   String?

@@ -3,11 +3,12 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const student = await prisma.student.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!student) {
@@ -22,12 +23,13 @@ export async function GET(
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await req.json();
     const student = await prisma.student.update({
-      where: { id: params.id },
+      where: { id },
       data: body,
     });
 

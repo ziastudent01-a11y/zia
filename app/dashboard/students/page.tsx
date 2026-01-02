@@ -3,6 +3,8 @@ import { Plus } from "lucide-react";
 import StudentsTable from "@/components/dashboard/StudentsTable";
 import StudentFilters from "@/components/students/StudentFilters";
 
+export const dynamic = 'force-dynamic';
+
 export default function StudentsPage() {
     return (
         <div className="space-y-6">

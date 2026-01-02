@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { prisma } from "../lib/prisma";
 
-const prisma = new PrismaClient();
+
 
 /**
  * Temporary demo campuses.
@@ -38,6 +38,7 @@ async function main() {
     create: {
       code: "MAIN",
       name: "Main Campus",
+      city: "Lahore",
       latitude: 31.5204,
       longitude: 74.3587,
     },

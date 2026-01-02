@@ -10,8 +10,8 @@ const campusSchema = z.object({
     code: z.string().min(1, "Code is required"),
     name: z.string().min(1, "Name is required"),
     city: z.string().min(1, "City is required"),
-    latitude: z.number({ required_error: "Latitude is required" }),
-    longitude: z.number({ required_error: "Longitude is required" }),
+    latitude: z.number(),
+    longitude: z.number(),
     address: z.string().optional(),
 });
 

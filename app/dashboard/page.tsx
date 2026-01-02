@@ -1,6 +1,8 @@
 import KpiCards from "@/components/dashboard/KpiCards";
-import CampusMap from "@/components/dashboard/CampusMap";
+import MapWrapper from "@/components/dashboard/MapWrapper";
 import ChartsSection from "@/components/dashboard/ChartsSection";
+
+export const dynamic = 'force-dynamic';
 
 export default function DashboardPage() {
   return (
@@ -9,7 +11,7 @@ export default function DashboardPage() {
       <KpiCards />
 
       {/* Map */}
-      <CampusMap />
+      <MapWrapper />
 
       {/* Charts */}
       <ChartsSection />

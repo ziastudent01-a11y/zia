@@ -168,9 +168,9 @@ export async function POST(req: Request) {
         data: {
           fileNumber: data.file_number,
           nationalId: data.national_id,
-          studentUid: data.student_uid,
+          // studentUid: data.student_uid, // Removed as not in schema
           ...cleanPayload,
-        },
+        } as any,
       });
       created++;
     }
