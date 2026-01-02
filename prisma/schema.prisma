@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Campus {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  name      String
+  city      String
+  latitude  Float
+  longitude Float
+  address   String?
+  isActive  Boolean  @default(true)
+
+  students  Student[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Student {
+  id             String   @id @default(uuid())
+
+  // Identity
+  fileNumber     String   @unique
+  nationalId     String
+  studentName    String
+  dateOfBirth    DateTime?
+  gender         Gender
+
+  // Campus & Program
+  campusId       String
+  campus         Campus   @relation(fields: [campusId], references: [id])
+  programName    String
+  session        String?
+  lastDegree     String?
+
+  // Guardian / Employment
+  guardianType       GuardianType
+  guardianName       String?
+  guardianCNIC       String?
+  fatherName         String?
+  designation        String?
+  factoryName        String?
+  factoryLocation    String?
+  factoryDepartment  String?
+  factoryCardNo      String?
+  dateOfJoining      DateTime?
+  serviceDuration    String?
+
+  // Contact / Bank
+  phonePrimary    String?
+  phoneSecondary  String?
+  bankAccount     String?
+
+  // Application / Govt status (Phase 1)
+  applicationStatus   ApplicationStatus
+  fileStatusOnline    String?
+  pwwbUploadStatus    String?
+  registrationStatus String?
+  courseStatus        CourseStatus
+
+  // Derived
+  isEligible      Boolean
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([campusId])
+  @@index([applicationStatus])
+  @@index([courseStatus])
+}
+
+enum GuardianType {
+  SELF
+  PARENT
+  GUARDIAN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum ApplicationStatus {
+  NOT_FILED
+  FILE_COMPLETE
+  FILE_INCOMPLETE
+  FILE_SUBMITTED
+  RETURNED
+}
+
+enum CourseStatus {
+  ENROLLED
+  COMPLETED
+  DROPPED
+}
