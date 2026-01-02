@@ -60,19 +60,19 @@ export async function GET() {
 
   // Merge stats into campuses
   const result = campuses.map((campus: Campus) => {
-    const campusAppStats = appStatusStats.filter((s) => s.campusId === campus.id);
-    const campusCourseStats = courseStatusStats.filter((s) => s.campusId === campus.id);
+    const campusAppStats = appStatusStats.filter((s: any) => s.campusId === campus.id);
+    const campusCourseStats = courseStatusStats.filter((s: any) => s.campusId === campus.id);
 
     // Calculate generic total
     const totalStudents = campusAppStats.reduce((acc, curr) => acc + curr._count._all, 0);
 
     // Helper to get count by specific status
     const getCount = (status: string, source: typeof campusAppStats) =>
-      source.find(s => s.applicationStatus === status)?._count._all || 0;
+      source.find((s: any) => s.applicationStatus === status)?._count._all || 0;
 
     // Helper for course status
     const getCourseCount = (status: string, source: typeof campusCourseStats) =>
-      source.find(s => s.courseStatus === status)?._count._all || 0;
+      source.find((s: any) => s.courseStatus === status)?._count._all || 0;
 
     return {
       ...campus,
