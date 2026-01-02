@@ -64,7 +64,7 @@ export async function GET() {
     const campusCourseStats = courseStatusStats.filter((s: any) => s.campusId === campus.id);
 
     // Calculate generic total
-    const totalStudents = campusAppStats.reduce((acc, curr) => acc + curr._count._all, 0);
+    const totalStudents = campusAppStats.reduce((acc: number, curr: any) => acc + curr._count._all, 0);
 
     // Helper to get count by specific status
     const getCount = (status: string, source: typeof campusAppStats) =>
