@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
         // Get Campuses Map for validation/lookup
         const campuses = await prisma.campus.findMany();
-        const campusMap = new Map(campuses.map((c) => [c.code, c.id]));
+        const campusMap = new Map(campuses.map((c: any) => [c.code, c.id]));
 
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i];

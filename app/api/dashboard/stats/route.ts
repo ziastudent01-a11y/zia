@@ -43,7 +43,7 @@ export async function GET() {
   });
 
   const campusStats = studentsByCampus.map((item: any) => ({
-    name: campuses.find((c) => c.id === item.campusId)?.name || "Unknown",
+    name: campuses.find((c: any) => c.id === item.campusId)?.name || "Unknown",
     value: item._count._all,
   }));
 
