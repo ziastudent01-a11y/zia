@@ -16,7 +16,7 @@ export async function GET() {
     },
   });
 
-  const data = campuses.map((campus) => {
+  const data = campuses.map((campus: any) => {
     const students = campus.students;
 
     return {
@@ -30,23 +30,23 @@ export async function GET() {
 
       // Mapping 'fundingStatus' logic to 'applicationStatus'
       approvedFilings: students.filter(
-        (s) => s.applicationStatus === "FILE_SUBMITTED"
+        (s: any) => s.applicationStatus === "FILE_SUBMITTED"
       ).length,
 
       pendingFilings: students.filter(
-        (s) => s.applicationStatus === "FILE_COMPLETE" || s.applicationStatus === "NOT_FILED"
+        (s: any) => s.applicationStatus === "FILE_COMPLETE" || s.applicationStatus === "NOT_FILED"
       ).length,
 
       rejectedFilings: students.filter(
-        (s) => s.applicationStatus === "RETURNED"
+        (s: any) => s.applicationStatus === "RETURNED"
       ).length,
 
       documentsMissing: students.filter(
-        (s) => s.applicationStatus === "FILE_INCOMPLETE"
+        (s: any) => s.applicationStatus === "FILE_INCOMPLETE"
       ).length,
 
       dropouts: students.filter(
-        (s) => s.courseStatus === "DROPPED"
+        (s: any) => s.courseStatus === "DROPPED"
       ).length,
     };
   });
