@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
+import { Campus } from "@prisma/client";
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -56,7 +57,7 @@ export async function GET() {
   });
 
   // Merge stats into campuses
-  const result = campuses.map((campus) => {
+  const result = campuses.map((campus: Campus) => {
     const campusAppStats = appStatusStats.filter((s) => s.campusId === campus.id);
     const campusCourseStats = courseStatusStats.filter((s) => s.campusId === campus.id);
 
