@@ -59,7 +59,7 @@ export default function CampusMap() {
           background: white;
           border-radius: 50%;
         "></div>
-        ${zoom > 6 ? `
+        ${zoom > 4 ? `
         <div style="
           position: absolute;
           top: -8px;
@@ -93,10 +93,24 @@ export default function CampusMap() {
     return null;
   }
 
+  function BoundsHandler({ campuses }: { campuses: CampusWithStats[] }) {
+    const map = useMapEvents({});
+
+    useEffect(() => {
+      if (campuses.length > 0) {
+        const bounds = L.latLngBounds(campuses.map(c => [c.latitude, c.longitude]));
+        map.fitBounds(bounds, { padding: [50, 50] });
+      }
+    }, [campuses, map]);
+
+    return null;
+  }
+
   return (
     <div className="h-100 rounded-xl overflow-hidden shadow relative z-0">
-      <MapContainer center={[30.3753, 69.3451]} zoom={6} className="h-full z-0">
+      <MapContainer center={[31.31, 74.08]} zoom={13} className="h-full z-0">
         <ZoomHandler />
+        <BoundsHandler campuses={campuses} />
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

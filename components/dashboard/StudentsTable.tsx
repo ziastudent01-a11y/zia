@@ -58,7 +58,7 @@ export default function StudentsTable() {
   return (
     <div className="bg-white rounded-xl shadow border">
       <div className="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-xl">
-        <h3 className="font-semibold text-gray-700">Student Directory</h3>
+        <h3 className="font-semibold text-gray-700">Files Directory</h3>
         <div className="flex gap-2">
           <button
             onClick={handleExport}
@@ -72,7 +72,7 @@ export default function StudentsTable() {
             className="flex items-center gap-2 px-3 py-1.5 text-sm bg-blue-600 text-white rounded hover:bg-blue-700"
           >
             <Plus size={16} />
-            Add Student
+            Add Files
           </Link>
         </div>
       </div>

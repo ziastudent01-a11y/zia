@@ -35,7 +35,7 @@ export default function ExcelImportForm() {
     };
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow text-center">
+        <div className="bg-white p-6 rounded-xl shadow text-center text-slate-900">
             <h3 className="text-lg font-semibold mb-4">Import Students via Excel</h3>
 
             <div className="mb-6 flex justify-end">
@@ -51,7 +51,7 @@ export default function ExcelImportForm() {
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 hover:bg-gray-50 transition">
                 <label className="cursor-pointer flex flex-col items-center">
                     <Upload className="w-12 h-12 text-gray-400 mb-2" />
-                    <span className="text-sm text-gray-600">Click to upload .xlsx</span>
+                    <span className="text-sm text-slate-700">Click to upload .xlsx</span>
                     <input
                         type="file"
                         accept=".xlsx, .xls"

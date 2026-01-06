@@ -71,7 +71,7 @@ export default function StudentEntryForm({ initialData }: Props) {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-8 rounded-xl shadow">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-8 rounded-xl shadow text-slate-900">
             <h2 className="text-2xl font-bold">New Student Entry</h2>
 
             {error && <div className="p-4 bg-red-50 text-red-500 rounded">{error}</div>}
@@ -81,26 +81,26 @@ export default function StudentEntryForm({ initialData }: Props) {
                 <div className="md:col-span-2 text-lg font-semibold border-b pb-2">Identity</div>
                 <div>
                     <label className="block text-sm font-medium">File Number</label>
-                    <input {...register("fileNumber")} className="w-full border p-2 rounded" />
+                    <input {...register("fileNumber")} className="w-full border p-2 rounded text-slate-900" />
                     {errors.fileNumber && <p className="text-red-500 text-sm">{errors.fileNumber.message}</p>}
                 </div>
                 <div>
                     <label className="block text-sm font-medium">National ID</label>
-                    <input {...register("nationalId")} className="w-full border p-2 rounded" />
+                    <input {...register("nationalId")} className="w-full border p-2 rounded text-slate-900" />
                     {errors.nationalId && <p className="text-red-500 text-sm">{errors.nationalId.message}</p>}
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Student Name</label>
-                    <input {...register("studentName")} className="w-full border p-2 rounded" />
+                    <input {...register("studentName")} className="w-full border p-2 rounded text-slate-900" />
                     {errors.studentName && <p className="text-red-500 text-sm">{errors.studentName.message}</p>}
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Date of Birth</label>
-                    <input type="date" {...register("dateOfBirth")} className="w-full border p-2 rounded" />
+                    <input type="date" {...register("dateOfBirth")} className="w-full border p-2 rounded text-slate-900" />
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Gender</label>
-                    <select {...register("gender")} className="w-full border p-2 rounded">
+                    <select {...register("gender")} className="w-full border p-2 rounded text-slate-900">
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
                     </select>
@@ -110,7 +110,7 @@ export default function StudentEntryForm({ initialData }: Props) {
                 <div className="md:col-span-2 text-lg font-semibold border-b pb-2 mt-4">Academic</div>
                 <div>
                     <label className="block text-sm font-medium">Campus</label>
-                    <select {...register("campusId")} className="w-full border p-2 rounded">
+                    <select {...register("campusId")} className="w-full border p-2 rounded text-slate-900">
                         <option value="">Select Campus</option>
                         {campuses.map((c) => (
                             <option key={c.id} value={c.id}>{c.name}</option>
@@ -120,19 +120,19 @@ export default function StudentEntryForm({ initialData }: Props) {
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Program Name</label>
-                    <input {...register("programName")} className="w-full border p-2 rounded" />
+                    <input {...register("programName")} className="w-full border p-2 rounded text-slate-900" />
                     {errors.programName && <p className="text-red-500 text-sm">{errors.programName.message}</p>}
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Session</label>
-                    <input {...register("session")} className="w-full border p-2 rounded" />
+                    <input {...register("session")} className="w-full border p-2 rounded text-slate-900" />
                 </div>
 
                 {/* Guardian */}
                 <div className="md:col-span-2 text-lg font-semibold border-b pb-2 mt-4">Guardian / Employment</div>
                 <div>
                     <label className="block text-sm font-medium">Guardian Type</label>
-                    <select {...register("guardianType")} className="w-full border p-2 rounded">
+                    <select {...register("guardianType")} className="w-full border p-2 rounded text-slate-900">
                         <option value="SELF">Self</option>
                         <option value="PARENT">Parent</option>
                         <option value="GUARDIAN">Guardian</option>
@@ -140,22 +140,22 @@ export default function StudentEntryForm({ initialData }: Props) {
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Father Name</label>
-                    <input {...register("fatherName")} className="w-full border p-2 rounded" />
+                    <input {...register("fatherName")} className="w-full border p-2 rounded text-slate-900" />
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Factory Name</label>
-                    <input {...register("factoryName")} className="w-full border p-2 rounded" />
+                    <input {...register("factoryName")} className="w-full border p-2 rounded text-slate-900" />
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Designation</label>
-                    <input {...register("designation")} className="w-full border p-2 rounded" />
+                    <input {...register("designation")} className="w-full border p-2 rounded text-slate-900" />
                 </div>
 
                 {/* Status */}
                 <div className="md:col-span-2 text-lg font-semibold border-b pb-2 mt-4">Status</div>
                 <div>
                     <label className="block text-sm font-medium">Application Status</label>
-                    <select {...register("applicationStatus")} className="w-full border p-2 rounded">
+                    <select {...register("applicationStatus")} className="w-full border p-2 rounded text-slate-900">
                         <option value="NOT_FILED">Not Filed</option>
                         <option value="FILE_COMPLETE">File Complete</option>
                         <option value="FILE_INCOMPLETE">File Incomplete</option>
@@ -165,7 +165,7 @@ export default function StudentEntryForm({ initialData }: Props) {
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Course Status</label>
-                    <select {...register("courseStatus")} className="w-full border p-2 rounded">
+                    <select {...register("courseStatus")} className="w-full border p-2 rounded text-slate-900">
                         <option value="ENROLLED">Enrolled</option>
                         <option value="COMPLETED">Completed</option>
                         <option value="DROPPED">Dropped</option>

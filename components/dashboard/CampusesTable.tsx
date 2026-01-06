@@ -57,8 +57,8 @@ export default function CampusesTable() {
                     <tbody className="divide-y divide-gray-100">
                         {campuses.map((campus) => (
                             <tr key={campus.id} className="hover:bg-gray-50">
-                                <td className="px-6 py-4 font-mono text-xs">{campus.code}</td>
-                                <td className="px-6 py-4 font-medium text-gray-900">{campus.name}</td>
+                                <td className="px-6 py-4 font-mono text-sm text-blue-400 font-medium">{campus.code}</td>
+                                <td className="px-6 py-4 font-medium text-blue-800">{campus.name}</td>
                                 <td className="px-6 py-4 text-gray-500">{campus.city}</td>
                                 <td className="px-6 py-4">
                                     <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">

@@ -63,7 +63,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
     };
 
     return (
-        <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
+        <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow text-slate-900">
             <h2 className="text-xl font-bold mb-6">{isEditing ? "Edit Campus" : "Add New Campus"}</h2>
             {error && <div className="text-red-500 mb-4">{error}</div>}
 
@@ -73,7 +73,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                         <label className="block text-sm font-medium">Campus Code</label>
                         <input
                             {...form.register("code")}
-                            className="w-full border rounded p-2"
+                            className="w-full border rounded p-2 text-slate-900"
                             placeholder="e.g. LHR-01"
                         />
                         {form.formState.errors.code && (
@@ -85,7 +85,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                         <label className="block text-sm font-medium">City</label>
                         <input
                             {...form.register("city")}
-                            className="w-full border rounded p-2"
+                            className="w-full border rounded p-2 text-slate-900"
                         />
                     </div>
                 </div>
@@ -94,7 +94,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                     <label className="block text-sm font-medium">Campus Name</label>
                     <input
                         {...form.register("name")}
-                        className="w-full border rounded p-2"
+                        className="w-full border rounded p-2 text-slate-900"
                     />
                 </div>
 
@@ -105,7 +105,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                             type="number"
                             step="any"
                             {...form.register("latitude", { valueAsNumber: true })}
-                            className="w-full border rounded p-2"
+                            className="w-full border rounded p-2 text-slate-900"
                         />
                     </div>
 
@@ -115,7 +115,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                             type="number"
                             step="any"
                             {...form.register("longitude", { valueAsNumber: true })}
-                            className="w-full border rounded p-2"
+                            className="w-full border rounded p-2 text-slate-900"
                         />
                     </div>
                 </div>
@@ -124,7 +124,7 @@ export default function AddCampusForm({ initialData }: AddCampusFormProps) {
                     <label className="block text-sm font-medium">Address (Optional)</label>
                     <textarea
                         {...form.register("address")}
-                        className="w-full border rounded p-2"
+                        className="w-full border rounded p-2 text-slate-900"
                         rows={3}
                     />
                 </div>

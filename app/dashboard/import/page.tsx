@@ -3,7 +3,7 @@ import ExcelImportForm from "@/components/forms/ExcelImportForm";
 export default function ImportPage() {
     return (
         <div className="max-w-xl mx-auto py-12">
-            <h1 className="text-3xl font-bold mb-8 text-center">Import Data</h1>
+            <h1 className="text-3xl font-bold mb-8 text-center text-blue-700">Import Data</h1>
             <ExcelImportForm />
 
             <div className="mt-8 p-4 bg-blue-50 text-blue-800 rounded-lg text-sm">

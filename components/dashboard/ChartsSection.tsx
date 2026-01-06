@@ -36,7 +36,7 @@ export default function ChartsSection() {
 
   if (!data)
     return (
-      <div className="rounded-xl bg-white shadow p-6 h-64 flex items-center justify-center text-gray-400">
+      <div className="rounded-xl bg-white shadow p-6 h-64 flex items-center justify-center text-gray-600">
         Loading charts...
       </div>
     );
@@ -45,7 +45,7 @@ export default function ChartsSection() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Campus Distribution */}
       <div className="rounded-xl bg-white shadow p-6">
-        <h3 className="text-lg font-semibold mb-4">Students by Campus</h3>
+        <h3 className="text-lg font-semibold mb-4 text-blue-700">Files by Campus</h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.byCampus}>
@@ -54,7 +54,7 @@ export default function ChartsSection() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="value" fill="#8884d8" name="Students" />
+              <Bar dataKey="value" fill="#8884d8" name="Files" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -62,7 +62,7 @@ export default function ChartsSection() {
 
       {/* Application Status */}
       <div className="rounded-xl bg-white shadow p-6">
-        <h3 className="text-lg font-semibold mb-4">Application Status</h3>
+        <h3 className="text-lg font-semibold mb-4 text-blue-700">Files Status</h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { GraduationCap, Calculator, Database } from "lucide-react";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -36,22 +37,22 @@ export default function LoginPage() {
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Username</label>
+                        <label className="block text-sm font-medium text-slate-900">Username</label>
                         <input
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            className="mt-1 w-full border rounded-md p-2"
+                            className="mt-1 w-full border rounded-md p-2 text-slate-900"
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Password</label>
+                        <label className="block text-sm font-medium text-slate-900">Password</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="mt-1 w-full border rounded-md p-2"
+                            className="mt-1 w-full border rounded-md p-2 text-slate-900"
                             required
                         />
                     </div>
@@ -62,8 +63,23 @@ export default function LoginPage() {
                         Sign In
                     </button>
                 </form>
-                <div className="mt-4 text-center text-gray-400 text-xs">
+                <div className="mt-4 text-center text-slate-600 text-xs">
                     Try: admin / admin123
+                </div>
+            </div>
+
+            <div className="absolute bottom-4 flex flex-wrap justify-center gap-6 text-xs text-slate-500 font-mono tracking-widest uppercase">
+                <div className="flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4" />
+                    <span>Professor Dr. Zia Qadri</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Calculator className="w-4 h-4" />
+                    <span>HR & Chartered</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Database className="w-4 h-4" />
+                    <span>Data Scientist</span>
                 </div>
             </div>
         </div>

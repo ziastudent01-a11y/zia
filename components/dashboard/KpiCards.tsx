@@ -23,7 +23,7 @@ export default function KpiCards() {
   if (!data) return null;
 
   const cards = [
-    { label: "Total Students", value: data.totalStudents },
+    { label: "Total Files (Registration)", value: data.totalStudents },
     { label: "Active Campuses", value: data.activeCampuses },
     { label: "Files Complete", value: data.fileComplete },
     { label: "Files Incomplete", value: data.fileIncomplete },
@@ -38,8 +38,8 @@ export default function KpiCards() {
           key={c.label}
           className="rounded-xl bg-white shadow p-4 border"
         >
-          <p className="text-sm text-gray-500 font-medium">{c.label}</p>
-          <p className="text-2xl font-bold text-gray-800 mt-1">{c.value}</p>
+          <p className="text-xl text-gray-700 font-medium">{c.label}</p>
+          <p className="text-4xl font-bold text-blue-600 mt-2">{c.value}</p>
         </div>
       ))}
     </div>

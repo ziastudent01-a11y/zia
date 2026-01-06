@@ -47,14 +47,14 @@ export default function StudentFilters() {
                 <input
                     type="text"
                     placeholder="Search by Name, File #, or ID..."
-                    className="border rounded p-2"
+                    className="border rounded p-2 text-slate-900 placeholder:text-gray-500"
                     value={filters.search}
                     onChange={(e) => handleFilterChange("search", e.target.value)}
                 />
 
                 {/* Campus Filter */}
                 <select
-                    className="border rounded p-2"
+                    className="border rounded p-2 text-slate-900"
                     value={filters.campusId}
                     onChange={(e) => handleFilterChange("campusId", e.target.value)}
                 >
@@ -70,14 +70,14 @@ export default function StudentFilters() {
                 <input
                     type="text"
                     placeholder="Filter by Program..."
-                    className="border rounded p-2"
+                    className="border rounded p-2 text-slate-900 placeholder:text-gray-500"
                     value={filters.programName}
                     onChange={(e) => handleFilterChange("programName", e.target.value)}
                 />
 
                 {/* Application Status */}
                 <select
-                    className="border rounded p-2"
+                    className="border rounded p-2 text-slate-900"
                     value={filters.applicationStatus}
                     onChange={(e) => handleFilterChange("applicationStatus", e.target.value)}
                 >

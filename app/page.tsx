@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, GraduationCap, Users } from "lucide-react";
+import { ArrowRight, BarChart3, GraduationCap, Users, Calculator, Database, Briefcase } from "lucide-react";
 
 export default function Home() {
   return (
@@ -13,18 +13,18 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm mb-8 animate-fade-in text-gray-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          System Operational
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-m mb-8 animate-fade-in text-gray-400">
+          <span className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" />
+          Superior Professional Academy Analytics Portal
         </div>
 
         {/* Hero Text */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight mb-6 animate-fade-in delay-100 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-4 animate-fade-in delay-100 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
           Empowering Education <br /> Through Data.
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-200 font-light">
-          A next-generation analytics portal for Superior Professional Academics.
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6 animate-fade-in delay-200 font-light">
+          A next-generation analytics portal for Superior Professional Academy.
           Monitor performance, track admissions, and visualize success in real-time.
         </p>
 
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
 
         {/* Floating Stats Cards */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto perspective-1000">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto perspective-1000">
           {/* Card 1 */}
           <div className="glass-panel p-6 rounded-2xl text-left animate-float delay-100 transform transition hover:-translate-y-2">
             <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mb-4 text-blue-400">
@@ -72,8 +72,19 @@ export default function Home() {
       </div>
 
       {/* Footer Element */}
-      <div className="absolute bottom-8 text-xs text-gray-600 font-mono tracking-widest uppercase">
-        Superior Group of Colleges
+      <div className="absolute bottom-4 flex flex-wrap justify-center gap-6 text-xs text-gray-400 font-mono tracking-widest uppercase">
+        <div className="flex items-center gap-2">
+          <GraduationCap className="w-4 h-4" />
+          <span>Zia Qadri</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Calculator className="w-4 h-4" />
+          <span>HR & Chartered</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Database className="w-4 h-4" />
+          <span>Data Scientist</span>
+        </div>
       </div>
     </div>
   );
