@@ -91,7 +91,7 @@ export default function SideNav() {
                             </div>
                             <div className="flex items-center gap-1">
                                 <Calculator className="w-3 h-3" />
-                                <span>HR & Chartered</span>
+                                <span>Fellow Charted & Licentiate HR Personnel (FCIPD, UK)</span>
                             </div>
                             <div className="flex items-center gap-1">
                                 <Database className="w-3 h-3" />

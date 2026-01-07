@@ -15,7 +15,7 @@ export default function Home() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-m mb-8 animate-fade-in text-gray-400">
           <span className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" />
-          Superior Professional Academy Analytics Portal
+          Superior Professional Academics Analytics Dashboard
         </div>
 
         {/* Hero Text */}
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-2">
           <Calculator className="w-4 h-4" />
-          <span>HR & Chartered</span>
+          <span>Fellow Chartered & Licentiate HR Personnel (FCIPD, UK)</span>
         </div>
         <div className="flex items-center gap-2">
           <Database className="w-4 h-4" />
